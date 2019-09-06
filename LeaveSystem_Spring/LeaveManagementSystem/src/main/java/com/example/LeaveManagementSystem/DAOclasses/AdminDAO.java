@@ -27,7 +27,6 @@ public class AdminDAO {
 
 	public String addEmployee(Employee employee) {
 
-		// TODO Auto-generated method stub
 		Login login = new Login();
 		BalanceLeaves balanceleave = new BalanceLeaves();
 		login.setEmployeeId(employee);
@@ -45,14 +44,12 @@ public class AdminDAO {
 	}
 
 	public void addDepartment(Department department) {
-		// TODO Auto-generated method stub
 		loginrepo.updaterole(department.getManagerId(), "manager");
 		departmentrepo.save(department);
 
 	}
 
 	public ArrayList<String> viewDepartment() {
-		// TODO Auto-generated method stub
 		ArrayList<Department> al = (ArrayList<Department>) departmentrepo.findAll();
 
 		ArrayList<String> arraylist = new ArrayList<String>();
@@ -64,17 +61,14 @@ public class AdminDAO {
 	}
 
 	public void editAddress(String address, String employeeId) {
-		// TODO Auto-generated method stub
 		employeerepo.editAddress(address, employeeId);
 	}
 
 	public void editEmail(String email, String employeeId) {
-		// TODO Auto-generated method stub
 		employeerepo.editEmail(email, employeeId);
 	}
 
 	public void editContact(String contact, String employeeId) {
-		// TODO Auto-generated method stub
 		employeerepo.editContact(contact, employeeId);
 	}
 
