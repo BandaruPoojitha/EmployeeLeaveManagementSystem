@@ -38,11 +38,11 @@ public class LoginController {
 		if (!login.getUsername().isEmpty()) {
 			if (!login.getPassword().isEmpty()) {
 				Login result =logincallRest.getLoginDetails(login);
-				if (result.getEmployeeType().equals("admin")) {
+				if ((result.getEmployeeType()!=null)&&result.getEmployeeType().equals("admin")) {
 					modelAndView = new ModelAndView("/admin");
 					   session.setAttribute("role", result.getEmployeeType());
 						session.setAttribute("empid", result.getEmployeeId().getEmployeeId());
-				} else if (result.getEmployeeType().equals("employee") || result.getEmployeeType().equals("manager") || result.getEmployeeType().equals("CEO")) {
+				} else if ((result.getEmployeeType()!=null)&&(result.getEmployeeType().equals("employee") || result.getEmployeeType().equals("manager") || result.getEmployeeType().equals("CEO"))) {
 	               session.setAttribute("role", result.getEmployeeType());
 					session.setAttribute("empid", result.getEmployeeId().getEmployeeId());
 					modelAndView = new ModelAndView("/employee");

@@ -75,11 +75,11 @@ public class AdminCallingRest {
 	}
 
 	public ArrayList<Login> getEmployeeId() {
-		// String uri =restURI.getURL()+"/adminrest/getempid" ;
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<ArrayList<Login>> arraylist = restTemplate.exchange(restURI.getURL() + "/adminrest/getempid",
 				HttpMethod.GET, null, new ParameterizedTypeReference<ArrayList<Login>>() {
 				});
+		System.out.println(arraylist.getStatusCode()+"^^");
 		ArrayList<Login> al = arraylist.getBody();
 
 		return al;

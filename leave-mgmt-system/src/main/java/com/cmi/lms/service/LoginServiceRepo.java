@@ -18,7 +18,9 @@ public class LoginServiceRepo {
 		String username = l.getUsername();
 
 		Optional<Login> newl = loginrepo.findById(username);
-       
+       if(newl.isEmpty()) {
+    	   return new Login();
+       }
 		return newl.get();
 
 	}

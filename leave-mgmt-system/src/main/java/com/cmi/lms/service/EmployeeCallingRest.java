@@ -37,8 +37,7 @@ public class EmployeeCallingRest {
 				});
 
 		ArrayList<ApplyLeave> al=arraylist.getBody();
-//		String uri = restURI.getURL()+"/employeerest/cancel";
-//		ArrayList<String> arraylist = restTemplate.getForObject(uri, ArrayList.class);
+
 		return al;
 	}
 	public ArrayList<ApplyLeave> trackLeave(String employeeId) {
@@ -60,8 +59,7 @@ public class EmployeeCallingRest {
 				new ParameterizedTypeReference<ArrayList<BalanceLeaves>>() {
 				});
 		ArrayList<BalanceLeaves> bl=arraylist.getBody();
-//		String uri = restURI.getURL()+"/employeerest/balance";
-//		ArrayList<Integer> arraylist = restTemplate.getForObject(uri, ArrayList.class);
+
 		return bl;
 	}
 	public String getManagerId(String empid) {
@@ -80,6 +78,7 @@ public class EmployeeCallingRest {
 		String uri = restURI.getURL()+"/employeerest/forward/" + sno + "/" + managerId;
 		RestTemplate resttemplate = new RestTemplate();
 		String result = resttemplate.getForObject(uri, String.class);
+
 		return result;
 	}
 	public void updateStatus(int sno, String value) {
