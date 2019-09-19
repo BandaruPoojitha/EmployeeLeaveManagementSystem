@@ -9,11 +9,11 @@ import javax.persistence.OneToOne;
 public class BalanceLeaves {
 	@Id
 	@GeneratedValue
-	int serialno;
+	private  int serialno;
 	@OneToOne(targetEntity = Employee.class)
-	Employee employeeId;
-	int LOP;
-	int Paid;
+	private  Employee employeeId;
+	private  int LOP;
+	private int Paid;
 
 	public int getSerialno() {
 		return serialno;

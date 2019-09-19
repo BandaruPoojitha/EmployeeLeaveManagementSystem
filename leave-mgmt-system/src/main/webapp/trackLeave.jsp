@@ -3,7 +3,7 @@
 	import="java.util.*,com.cmi.lms.beans.*"
 	pageEncoding="ISO-8859-1"%>
 
-<%
+<%if(request.getAttribute("track")!=null){
 	ArrayList<ApplyLeave> ld = (ArrayList<ApplyLeave>) request.getAttribute("track");
 %>
 
@@ -60,6 +60,7 @@ legend {
 						+ "</td><td>" + ld.get(i).getReason() + "</td><td>" + ld.get(i).getStatus() + "</td>");
 			}
 			session.removeAttribute("track");
+}
 		%>
 	
 </body>

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cmi.lms.beans.ApplyLeave;
-import com.cmi.lms.beans.Employee;
 
 @Repository
 public interface LeaveRepo extends CrudRepository<ApplyLeave, Integer> {

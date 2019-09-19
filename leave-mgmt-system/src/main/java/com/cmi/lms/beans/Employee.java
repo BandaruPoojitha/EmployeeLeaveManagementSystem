@@ -9,16 +9,16 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Employee {
 	@Id
-	String employeeId;
+	private String employeeId;
 	
 	@ManyToOne
 	private Department department;
-	String employeeName;
-	String managerId;
+	private String employeeName;
+	private String managerId;
 	
-	String email;
-	String address;
-	String phonenumber;
+	private String email;
+	private String address;
+	private String phonenumber;
 
 
 	public Department getDepartment() {
@@ -77,13 +77,6 @@ public class Employee {
 		this.phonenumber = phonenumber;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", department=" + department + ", employeeName=" + employeeName
-				+ ", managerId=" + managerId + ", email=" + email + ", address=" + address + ", phonenumber="
-				+ phonenumber + "]";
-	}
 
 	
 }

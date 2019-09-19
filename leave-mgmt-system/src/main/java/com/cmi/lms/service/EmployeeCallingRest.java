@@ -19,7 +19,7 @@ public class EmployeeCallingRest {
 	@Autowired
 	RestURL restURI;
 
-	public ArrayList<ApplyLeave> grantLeave(String employeeId) {
+	public ArrayList<ApplyLeave> grantLeave(String employeeId)throws Exception {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<ArrayList<ApplyLeave>> arraylist = restTemplate.exchange(
 				restURI.getURL() + "/employeerest/grant/" + employeeId, HttpMethod.GET, null,
@@ -30,7 +30,7 @@ public class EmployeeCallingRest {
 		return al;
 	}
 
-	public ArrayList<ApplyLeave> cancelLeave(String employeeId) {
+	public ArrayList<ApplyLeave> cancelLeave(String employeeId) throws Exception{
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<ArrayList<ApplyLeave>> arraylist = restTemplate.exchange(
 				restURI.getURL() + "/employeerest/cancel/" + employeeId, HttpMethod.GET, null,
@@ -42,7 +42,7 @@ public class EmployeeCallingRest {
 		return al;
 	}
 
-	public ArrayList<ApplyLeave> trackLeave(String employeeId) {
+	public ArrayList<ApplyLeave> trackLeave(String employeeId) throws Exception{
 
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<ArrayList<ApplyLeave>> arraylist = restTemplate.exchange(
@@ -55,7 +55,7 @@ public class EmployeeCallingRest {
 		return al;
 	}
 
-	public ArrayList<BalanceLeaves> balanceLeaves(String employeeId) {
+	public ArrayList<BalanceLeaves> balanceLeaves(String employeeId)throws Exception {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<ArrayList<BalanceLeaves>> arraylist = restTemplate.exchange(
 				restURI.getURL() + "/employeerest/balance/" + employeeId, HttpMethod.GET, null,
@@ -90,7 +90,7 @@ public class EmployeeCallingRest {
 		return "updated";
 	}
 
-	public void updateStatus(ApplyLeave al) {
+	public void updateStatus(ApplyLeave al)throws Exception {
 		RestTemplate resttemplate = new RestTemplate();
 		String uri = restURI.getURL() + "/employeerest/status";
 		resttemplate.put(uri, al);

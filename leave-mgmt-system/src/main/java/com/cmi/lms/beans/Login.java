@@ -11,12 +11,9 @@ public class Login {
 	@OneToOne
 	private Employee employeeId;
 
-	@Override
-	public String toString() {
-		return "Login [username=" + username + ", employeeId=" + employeeId + ", password=" + password
-				+ ", employeeType=" + employeeType + "]";
-	}
 
+	String password;
+	String employeeType;
 	public String getUsername() {
 		return username;
 	}
@@ -49,7 +46,5 @@ public class Login {
 		this.employeeType = employeeType;
 	}
 
-	String password;
-	String employeeType;
 
 }

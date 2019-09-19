@@ -39,7 +39,6 @@ public class validateLeave {
 	}
 
 	boolean strechLeavesBefore(Date startdate, int noofdays,String empid) {
-		try {
 			while (noofdays + dayscount < 5) {
 				arraylist = employeedao.validLeaves(startdate,empid);
 				if (arraylist.isEmpty()) {
@@ -50,9 +49,7 @@ public class validateLeave {
 
 				}
 			}
-		} catch (Exception e) {
-			return true;
-		}
+		
 		return false;
 	}
 
